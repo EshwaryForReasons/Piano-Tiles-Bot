@@ -36,32 +36,35 @@ while True:
     sct_img = sct.grab(screenDimensions)
     if searchFor == blue:
         searchHeight = sct_img.height - footer
-    else:
+    else: 
         searchHeight = sct_img.height
 
     for i in reversed(range(0, searchHeight)):
         #First Lane
         if sct_img.pixel(75, i) in searchFor:
             #Prevent Popups
-            if i>88:
+            if i>400:
                 cursor.click(75 + 663, i + 37 + 2)
             searchFor = black
             break
 
         #Second Lane
         elif sct_img.pixel(255, i) in searchFor:
-            cursor.click(255 + 663, i + 37 + 2 )
+            if i>400:
+                cursor.click(255 + 663, i + 37 + 2 )
             searchFor = black
             break
 
         #Third Lane
         elif sct_img.pixel(375, i) in searchFor:
-            cursor.click(375 + 663, i + 37 + 2)
+            if i>400:
+                cursor.click(375 + 663, i + 37 + 2)
             searchFor = black
             break
 
         #Forth Lane
         elif sct_img.pixel(525, i) in searchFor:
-            cursor.click(525 + 663, i + 37 + 2)
+            if i>400:
+                cursor.click(525 + 663, i + 37 + 2)
             searchFor = black
             break
